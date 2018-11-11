@@ -1,10 +1,10 @@
 /*----------------------------------------------------------
- *				HTBLA-Leonding / Klasse: 2AHDV
+ *				HTBLA-Leonding / Klasse: 2AHIF
  * ---------------------------------------------------------
- * Exercise Number: 0
+ * Exercise Number: 6
  * Title:			test_chess.c
- * Author:			P. Bauer
- * Due Date:		November 9, 2010
+ * Author:		Benjamin Besic
+ * Due Date:		6.11.2018
  * ----------------------------------------------------------
  * Description:
  * Test functions for chess.

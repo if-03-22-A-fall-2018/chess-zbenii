@@ -1,7 +1,7 @@
 /*----------------------------------------------------------
  *				HTBLA-Leonding / Klasse: 2AHIF
  * ---------------------------------------------------------
- * Exercise Number: 0
+ * Exercise Number: 6
  * Title:			chess.h
  * Author:			 Benjamin Besic
  * Due Date:		  6.11.2018
