@@ -37,14 +37,21 @@
   }
   void 	init_chess_board (ChessBoard chess_board)
   {
-    chess_board = {0};
+    for(int i=0; i<8;i++){
+      for(int j=0;j<8;j++){
+        chess_board[i][j].is_occupied=false;
+        chess_board[i][j].piece.type=NoPiece;
+      }
+    }
   }
   struct ChessSquare * 	get_square (ChessBoard chess_board, File file, Rank rank)
   {
     if (is_square_ok(file, rank)) {
-      return &chess_board[file-1][rank-1];
+      struct ChessSquare x;
+      x.is_occupied=chess_board[file-'a'][rank-1].is_occupied;
+      x.piece=chess_board[file-'a'][rank-1].piece;
+      return &x;
     }
-    return 0;
   }
   bool 	is_square_occupied (ChessBoard chess_board, File file, Rank rank)
   {
