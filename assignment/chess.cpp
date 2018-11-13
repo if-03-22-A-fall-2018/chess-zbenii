@@ -146,18 +146,74 @@
 
   bool 	squares_share_knights_move (File s1_f, Rank s1_r, File s2_f, Rank s2_r)
   {
-    if (is_square_ok(s1_f,s1_r) == true && is_square_ok(s2_f,s2_r) == true) {
-      return squares_share_diagonal(s1_f, s1_r, s2_f, s2_r);
+    if(s1_r+2==s2_r&&s1_f+1==s2_f)
+    {
+      return true;
     }
-    return false;
+    else if(s1_r+2==s2_r&&s1_f-1==s2_f)
+    {
+      return true;
+    }
+    else if(s1_r-2==s2_r&&s1_f+1==s2_f)
+    {
+      return true;
+    }
+    else if(s1_r-2==s2_r&&s1_f-1==s2_f)
+    {
+      return true;
+    }
+    else if(s1_r-1==s2_r&&s1_f+2==s2_f)
+    {
+      return true;
+    }
+    else if(s1_r+1==s2_r&&s1_f+2==s2_f)
+    {
+      return true;
+    }
+    else if(s1_r-1==s2_r&&s1_f-2==s2_f)
+    {
+      return true;
+    }
+    else if(s1_r+1==s2_r&&s1_f-2==s2_f)
+    {
+      return true;
+    }
+ return false;
   }
 
   bool 	squares_share_pawns_move (enum PieceColor color, enum MoveType move, File s1_f, Rank s1_r, File s2_f, Rank s2_r)
   {
-    if (is_square_ok(s1_f,s1_r) == true && is_square_ok(s2_f,s2_r) == true && s1_r+1 == s2_r && (s1_f-1 == s2_f || s1_f+1 == s2_f)) {
-      move = CaptureMove;
-    }else {move = NormalMove;}
-    return move;
+    if(move==NormalMove && color==White && s1_f==s2_f && s1_r+2 == s2_r && s1_r==2)
+  {
+    return true;
+  }
+
+  else if(move==NormalMove && color==White && s1_f==s2_f && s1_r+1 == s2_r && s1_r>1)
+  {
+    return true;
+  }
+
+  else if(move==CaptureMove && color==White && (s1_f==s2_f+1 || s1_f==s2_f-1) && s1_r+1 == s2_r)
+  {
+    return true;
+  }
+
+  else if(move==NormalMove && color==Black && s1_f==s2_f && s1_r-2 == s2_r && s1_r==7)
+  {
+    return true;
+  }
+
+  else if(move==NormalMove && color==Black && s1_f==s2_f && s1_r-1 == s2_r && s1_r<8)
+  {
+    return true;
+  }
+
+  else if(move==CaptureMove && color==Black && (s1_f==s2_f+1 || s1_f==s2_f-1) && s1_r-1 == s2_r)
+  {
+    return true;
+  }
+
+return false;
   }
 
   bool 	squares_share_queens_move (File s1_f, Rank s1_r, File s2_f, Rank s2_r)
